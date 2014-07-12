@@ -67,7 +67,7 @@ class YouTubeLogin():
             return (result, 200)
 
         refreshed = False
-        if get("new", "false") == "false" and self.pluginsettings.authenticationRefreshRoken and old_user_name == user_name and old_user_password == user_password:
+        if get("new", "false") == "false" and self.pluginsettings.authenticationRefreshToken and old_user_name == user_name and old_user_password == user_password:
             self.common.log("refreshing token: " + str(refreshed))
             refreshed = self.core._oRefreshToken()
 
